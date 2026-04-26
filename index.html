@@ -8,127 +8,140 @@
         body {
             background-color: #0f172a;
             color: #f8fafc;
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
 
         .card {
             background-color: #1e293b;
-            width: 90%;
+            width: 100%;
             max-width: 400px;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .image-container {
             width: 100%;
-            height: 300px;
-            overflow: hidden;
+            aspect-ratio: 1 / 1; /* Perfektní čtverec pro fotku */
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Tady se zobrazí tvoje fotka v plné kráse */
+            object-fit: cover;
+            display: block;
         }
 
         .content {
-            padding: 24px;
+            padding: 28px;
         }
 
         .badge {
-            background-color: rgba(34, 197, 94, 0.2);
+            background-color: rgba(34, 197, 94, 0.15);
             color: #4ade80;
-            padding: 4px 12px;
+            padding: 6px 12px;
             border-radius: 99px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .badge::before {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background-color: #22c55e;
             border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
         }
 
         h1 {
-            font-size: 28px;
-            margin: 0 0 16px 0;
+            font-size: 26px;
+            margin: 0 0 12px 0;
             line-height: 1.2;
+            font-weight: 800;
         }
 
         p {
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .progress-section {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 16px;
+            border-radius: 16px;
             margin-bottom: 24px;
         }
 
-        .progress-container {
-            margin-bottom: 8px;
-        }
-
         .progress-bar {
-            height: 8px;
+            height: 10px;
             background-color: #334155;
-            border-radius: 4px;
+            border-radius: 5px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background-color: #4ade80;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
             width: 2%; /* Tady nastavíš reálný progres */
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
         }
 
         .stats {
             display: flex;
             justify-content: space-between;
-            font-size: 18px;
-            font-weight: 700;
             margin-top: 12px;
         }
 
-        .stats .goal {
-            color: #4ade80;
-            text-align: right;
+        .stat-box b {
+            display: block;
+            font-size: 18px;
+            color: #fff;
         }
 
-        .stats span {
-            display: block;
+        .stat-box span {
             font-size: 12px;
             color: #64748b;
-            font-weight: 400;
+            text-transform: uppercase;
         }
 
         .btn {
             display: block;
-            background-color: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
             color: white;
             text-align: center;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            margin-top: 24px;
-            transition: all 0.2s;
+            padding: 18px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
         }
 
         .btn:hover {
-            background-color: #4f46e5;
             transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.5);
+            filter: brightness(1.1);
         }
     </style>
 </head>
@@ -145,20 +158,26 @@
             <h1>Ultimate Squeeze Toy</h1>
             
             <p>
-                Times are tough and the stress is piling up. I urgently need to fund this <strong>highly specialized, ergonomic squeeze toy</strong> to keep my sanity intact. My internal tension has reached critical levels.
+                My boss is a demon and the stress is reaching critical levels. I need this <b>ergonomic masterpiece</b> to survive the week. Help me buy some sanity.
             </p>
 
-            <div class="progress-container">
+            <div class="progress-section">
                 <div class="progress-bar">
                     <div class="progress-fill"></div>
                 </div>
                 <div class="stats">
-                    <div>$0<span>raised</span></div>
-                    <div class="goal">$50<span>goal (0%)</span></div>
+                    <div class="stat-box">
+                        <b>$0</b>
+                        <span>Raised</span>
+                    </div>
+                    <div class="stat-box" style="text-align: right;">
+                        <b style="color: #4ade80;">$50</b>
+                        <span>Goal (0%)</span>
+                    </div>
                 </div>
             </div>
 
-            <a href="TVUJ_PAYPAL_NEBO_DONATE_LINK" class="btn">Support the Toy Fund</a>
+            <a href="TVŮJ_PAYPAL_ODKAZ" class="btn">Support My Sanity</a>
         </div>
     </div>
 
