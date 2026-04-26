@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESCUE MISSION: SANITY</title>
+    <title>Survival Fund</title>
     <style>
         body {
             background-color: #0f172a;
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
+            color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,18 +20,17 @@
         .card {
             background-color: #1e293b;
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .img-container {
             width: 100%;
             background: #000;
             line-height: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .img-container img {
@@ -41,95 +40,111 @@
         }
 
         .content {
-            padding: 25px;
+            padding: 28px;
         }
 
-        .badge {
-            background: rgba(74, 222, 128, 0.1);
-            color: #4ade80;
-            padding: 5px 12px;
-            border-radius: 20px;
+        .status {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
+            letter-spacing: 1px;
+            color: #4ade80;
+            margin-bottom: 8px;
+            display: block;
         }
 
         h1 {
             font-size: 24px;
-            margin: 0 0 10px 0;
-            font-weight: 800;
+            margin: 0 0 16px 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         p {
             color: #94a3b8;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
 
-        .progress-bar {
-            height: 12px;
+        .progress-box {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+
+        .bar-bg {
+            height: 8px;
             background: #334155;
-            border-radius: 6px;
+            border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .fill {
+        .bar-fill {
             height: 100%;
             background: #6366f1;
-            width: 2%; /* <--- TADY ZMĚŇ PROGRES */
+            width: 0%; /* Změň podle toho, kolik ti přistane */
         }
 
         .stats {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 25px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .btn {
             display: block;
-            background: #6366f1;
-            color: white;
+            background: #f1f5f9;
+            color: #0f172a;
             text-align: center;
             text-decoration: none;
             padding: 16px;
-            border-radius: 12px;
-            font-weight: bold;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
             transition: 0.2s;
         }
 
-        .btn:hover { background: #4f46e5; }
+        .btn:hover {
+            background: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #475569;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
     <div class="img-container">
-        <img src="https://i.ibb.co/sJ1gVCm8/Blur-16284-copy.jpg" alt="The Tool">
+        <img src="https://i.ibb.co/sJ1gVCm8/Blur-16284-copy.jpg" alt="Object">
     </div>
 
     <div class="content">
-        <div class="badge">Status: Critical</div>
-        <h1>Ultimate Squeeze Toy</h1>
-        <p>Boss is a demon. Stress level 999. This is the only thing keeping me from a total meltdown. Help me fund it. 💀</p>
-
-        <div class="progress-bar">
-            <div class="fill"></div>
-        </div>
+        <span class="status">● Sanity Tracker</span>
+        <h1>The Stress Solution</h1>
         
-        <div class="stats">
-            <span>$0 raised</span>
-            <span style="color: #4ade80;">$50 goal</span>
+        <p>
+            The corporate grind is undefeated. I found this ergonomic masterpiece and now it's a matter of survival. One dollar = one minute of peace. 
+        </p>
+
+        <div class="progress-box">
+            <div class="bar-bg">
+                <div class="bar-fill"></div>
+            </div>
+            <div class="stats">
+                <span>$0 raised</span>
+                <span style="color: #4ade80;">Goal: $50</span>
+            </div>
         </div>
 
-        <a href="TVUJ_LINK" class="btn">Fund My Sanity</a>
-    </div>
-</div>
-
-</body>
-</html>
+        <a href="https://paypal.me/Davisoppxx" target="_blank" class="btn
+            
