@@ -6,194 +6,160 @@
     <title>RESCUE MISSION: CLASSIFIED</title>
     <style>
         :root {
-            --bg-color: #05070a;
-            --card-bg: #0d1117;
-            --text-color: #c9d1d9;
-            --accent-color: #f85149; /* Varovná červená */
-            --accent-hover: #da3633;
-            --progress-bar-bg: #21262d;
-            --progress-fill: #238636; /* Zelená pro naději */
+            --bg: #050505;
+            --card: #0d0d0d;
+            --red: #ff3e3e;
+            --green: #00ff41;
+            --text: #ffffff;
+            --dim-text: #666;
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace; /* Hacker vibe */
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
         }
 
-        .container {
-            background-color: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 8px;
+        .card {
+            background-color: var(--card);
+            border: 2px solid var(--red);
             width: 90%;
-            max-width: 420px;
-            padding: 30px 20px;
-            box-shadow: 0 0 20px rgba(248, 81, 73, 0.1);
+            max-width: 400px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 62, 62, 0.2);
+            position: relative;
         }
 
-        .image-box {
+        .img-container {
             position: relative;
             width: 100%;
-            border-radius: 4px;
+            height: 250px;
             overflow: hidden;
-            margin-bottom: 25px;
+            border: 1px solid var(--dim-text);
             background: #000;
-            border: 1px solid #30363d;
+            margin-bottom: 20px;
         }
 
-        .main-photo {
+        .img-container img {
             width: 100%;
-            display: block;
-            filter: blur(15px) brightness(0.6); /* Hardcore pixel/blur efekt */
-            transition: filter 0.5s ease;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(20px) brightness(0.6);
+            transition: 0.5s;
         }
 
-        .overlay-label {
+        .lock-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 24px;
+            width: 90%;
+            border: 2px solid white;
+            background: rgba(255, 62, 62, 0.8);
+            color: white;
             font-weight: bold;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            background: rgba(248, 81, 73, 0.8);
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            pointer-events: none;
-            width: 80%;
         }
 
         h1 {
-            font-size: 20px;
-            color: var(--accent-color);
+            color: var(--red);
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .status-badge {
-            font-size: 11px;
-            background: #161b22;
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid #30363d;
-            display: inline-block;
-            margin-bottom: 20px;
         }
 
         .description {
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #8b949e;
+            font-size: 0.85rem;
+            color: var(--dim-text);
+            line-height: 1.4;
+            margin-bottom: 25px;
         }
 
         .stats {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 0.9rem;
             margin-bottom: 5px;
         }
 
-        .progress-container {
-            height: 10px;
-            background: var(--progress-bar-bg);
-            border-radius: 5px;
-            margin-bottom: 35px;
+        .progress-bg {
+            background: #222;
+            height: 12px;
+            border-radius: 6px;
             overflow: hidden;
+            margin-bottom: 30px;
         }
 
-        .progress-bar {
+        .progress-fill {
+            background: var(--red);
             height: 100%;
-            background: var(--progress-fill);
-            width: 0%; /* Nastaví JS */
-            box-shadow: 0 0 10px var(--progress-fill);
+            width: 0%; /* Změň podle reality */
+            box-shadow: 0 0 10px var(--red);
         }
 
         .btn {
             display: block;
-            background: var(--accent-color);
-            color: #fff;
+            background: var(--red);
+            color: white;
+            text-align: center;
             text-decoration: none;
-            padding: 18px;
-            border-radius: 5px;
+            padding: 15px;
             font-weight: bold;
             text-transform: uppercase;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.2s;
         }
 
         .btn:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
+            background: #ff0000;
+            transform: scale(1.02);
         }
 
-        .warning {
-            font-size: 10px;
-            color: #484f58;
-            margin-top: 20px;
+        .urgent {
+            color: var(--red);
+            font-size: 0.7rem;
+            margin-top: 15px;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Mission: Sanity</h1>
-        <div class="status-badge">● LIVE TRACKING: ACTIVE</div>
+<div class="card">
+    <div class="status" style="font-size: 0.7rem; color: var(--green); margin-bottom: 10px;">● SYSTEM_STRESSED_CRITICAL</div>
+    
+    <h1>Mission: Sanity</h1>
 
-        <div class="image-box">
-            <img src="https://lh3.googleusercontent.com/d/1B_ZDQkHLTy8GBagr1ieG7T-xnslFMhGc" class="main-photo" alt="Classified">
-            <div class="overlay-label">UNBLUR AT 100%</div>
-        </div>
-
-        <p class="description">
-            The grind is real. My boss is a monster. This "object" is the only thing keeping me from a total meltdown. <br><br>
-            <strong>Status:</strong> Critical. <br>
-            <strong>Target:</strong> Ergonomic masterpiece.
-        </p>
-
-        <div class="stats">
-            <span id="raised-text">$0 raised</span>
-            <span id="percent-text">0%</span>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar" id="bar"></div>
-        </div>
-
-        <a href="https://www.paypal.me/tvujucet/1" target="_blank" class="btn">
-            Send $1 & Leak the Photo
-        </a>
-
-        <div class="warning">
-            System will self-destruct if $0 remains after 24h.
-        </div>
+    <div class="img-container">
+        <img src="TVOJE_FOTKA.JPG" alt="Top Secret">
+        <div class="lock-overlay">UNBLUR AT 100%</div>
     </div>
 
-    <script>
-        // --- TADY UPRAVUJ HODNOTY ---
-        const raised = 0;   // Kolik jsi už dostal
-        const goal = 10;    // Cíl (dej tam těch $10, ať to vypadá blízko!)
-        // ---------------------------
+    <p class="description">
+        The corporate world is a meat grinder. I spent my last $5 on this domain. Help me get this specialized ergonomic tool before I go 100% insane. 💀
+    </p>
 
-        const progress = (raised / goal) * 100;
-        document.getElementById('bar').style.width = progress + '%';
-        document.getElementById('raised-text').innerText = '$' + raised + ' raised';
-        document.getElementById('percent-text').innerText = Math.round(progress) + '%';
+    <div class="stats">
+        <span>Raised: $0</span>
+        <span>Goal: $50</span>
+    </div>
 
-        // Pokud dosáhneš 100 %, odmaž blur
-        if (progress >= 100) {
-            document.querySelector('.main-photo').style.filter = 'none';
-            document.querySelector('.overlay-label').style.display = 'none';
-        }
-    </script>
+    <div class="progress-bg">
+        <div class="progress-fill" style="width: 2%;"></div>
+    </div>
+
+    <a href="TVŮJ_PAYPAL_NEBO_LINK" class="btn">Send $1 & Save a Soul</a>
+
+    <span class="urgent">WARNING: Site self-destructs if $0 remains after 24h.</span>
+</div>
 
 </body>
 </html>
