@@ -3,95 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNBLOCK THE TRUTH</title>
+    <title>Rescue Mission - Toy Fund</title>
     <style>
         body {
-            background: #000;
-            color: #fff;
-            font-family: 'Arial Black', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Inter', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            text-transform: uppercase;
         }
-        .wrapper {
-            width: 350px;
-            text-align: center;
-            border: 4px solid #ff0000;
-            padding: 20px;
-            background: #111;
+
+        .card {
+            background-color: #1e293b;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-        .img-box {
-            position: relative;
-            background: #000;
+
+        .image-container {
+            width: 100%;
             height: 300px;
-            margin-bottom: 20px;
-            border: 2px solid #333;
             overflow: hidden;
         }
-        .img-box img {
+
+        .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            filter: blur(40px) brightness(0.5); /* Tohle je ten 'leak' efekt */
+            object-fit: cover; /* Tady se zobrazí tvoje fotka v plné kráse */
         }
-        .img-box::after {
-            content: 'UNLOCK AT 100%';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #ff0000;
-            padding: 10px;
-            font-size: 1.2rem;
-            width: 80%;
-            border: 2px solid #fff;
+
+        .content {
+            padding: 24px;
         }
-        h1 { font-size: 1.4rem; color: #ff0000; margin: 0 0 10px 0; }
-        p { font-size: 0.8rem; color: #aaa; margin-bottom: 20px; font-family: monospace; }
-        .bar-bg { background: #222; height: 30px; border: 2px solid #fff; margin-bottom: 10px; position: relative; }
-        .bar-fill { 
-            background: #ff0000; 
-            height: 100%; 
-            width: 2%; /* Změň na 20% až tam sám hodíš pár korun */
-            transition: 0.5s;
+
+        .badge {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
         }
-        .bar-text { position: absolute; width: 100%; top: 5px; left: 0; font-size: 0.9rem; }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .progress-container {
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #334155;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4ade80;
+            width: 2%; /* Tady nastavíš reálný progres */
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .stats .goal {
+            color: #4ade80;
+            text-align: right;
+        }
+
+        .stats span {
+            display: block;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 400;
+        }
+
         .btn {
             display: block;
-            background: #fff;
-            color: #000;
-            padding: 20px;
+            background-color: #6366f1;
+            color: white;
+            text-align: center;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border: 4px solid #ff0000;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 24px;
+            transition: all 0.2s;
         }
-        .btn:hover { background: #ff0000; color: #fff; }
-        .timer { font-size: 0.7rem; color: #555; margin-top: 15px; }
+
+        .btn:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <h1>Mission: Sanity</h1>
-    <p>Boss is a demon. I'm one click away from losing it. Help me fund this "object" before the timer hits zero.</p>
+    <div class="card">
+        <div class="image-container">
+            <img src="https://lh3.googleusercontent.com/d/1B_ZDQkHLTy8GBagr1ieG7T-xnslFMhGc" alt="Ultimate Squeeze Toy">
+        </div>
 
-    <div class="img-box">
-        <img src="https://lh3.googleusercontent.com/d/1B_ZDQkHLTy8GBagr1ieG7T-xnslFMhGc" alt="Classified">
+        <div class="content">
+            <div class="badge">Rescue Mission</div>
+            
+            <h1>Ultimate Squeeze Toy</h1>
+            
+            <p>
+                Times are tough and the stress is piling up. I urgently need to fund this <strong>highly specialized, ergonomic squeeze toy</strong> to keep my sanity intact. My internal tension has reached critical levels.
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="stats">
+                    <div>$0<span>raised</span></div>
+                    <div class="goal">$50<span>goal (0%)</span></div>
+                </div>
+            </div>
+
+            <a href="TVUJ_PAYPAL_NEBO_DONATE_LINK" class="btn">Support the Toy Fund</a>
+        </div>
     </div>
-
-    <div class="bar-bg">
-        <div class="bar-fill"></div>
-        <div class="bar-text">$0 / $50 FUNDED</div>
-    </div>
-
-    <a href="TVŮJ_PAYPAL_LINK" class="btn">LEAK THE PHOTO ($1)</a>
-
-    <div class="timer">SYSTEM_SHUTDOWN_IN: 23:54:12</div>
-</div>
 
 </body>
 </html>
