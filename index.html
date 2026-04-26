@@ -3,162 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESCUE MISSION: CLASSIFIED</title>
+    <title>UNBLOCK THE TRUTH</title>
     <style>
-        :root {
-            --bg: #050505;
-            --card: #0d0d0d;
-            --red: #ff3e3e;
-            --green: #00ff41;
-            --text: #ffffff;
-            --dim-text: #666;
-        }
-
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: 'Arial Black', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
+            text-transform: uppercase;
         }
-
-        .card {
-            background-color: var(--card);
-            border: 2px solid var(--red);
-            width: 90%;
-            max-width: 400px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(255, 62, 62, 0.2);
-            position: relative;
+        .wrapper {
+            width: 350px;
+            text-align: center;
+            border: 4px solid #ff0000;
+            padding: 20px;
+            background: #111;
         }
-
-        .img-container {
+        .img-box {
             position: relative;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            border: 1px solid var(--dim-text);
             background: #000;
+            height: 300px;
             margin-bottom: 20px;
+            border: 2px solid #333;
+            overflow: hidden;
         }
-
-        .img-container img {
+        .img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(20px) brightness(0.6);
-            transition: 0.5s;
+            filter: blur(40px) brightness(0.5); /* Tohle je ten 'leak' efekt */
         }
-
-        .lock-overlay {
+        .img-box::after {
+            content: 'UNLOCK AT 100%';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%;
-            border: 2px solid white;
-            background: rgba(255, 62, 62, 0.8);
-            color: white;
-            font-weight: bold;
-            padding: 10px 0;
-            text-align: center;
+            background: #ff0000;
+            padding: 10px;
             font-size: 1.2rem;
-            text-transform: uppercase;
+            width: 80%;
+            border: 2px solid #fff;
         }
-
-        h1 {
-            color: var(--red);
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
+        h1 { font-size: 1.4rem; color: #ff0000; margin: 0 0 10px 0; }
+        p { font-size: 0.8rem; color: #aaa; margin-bottom: 20px; font-family: monospace; }
+        .bar-bg { background: #222; height: 30px; border: 2px solid #fff; margin-bottom: 10px; position: relative; }
+        .bar-fill { 
+            background: #ff0000; 
+            height: 100%; 
+            width: 2%; /* Změň na 20% až tam sám hodíš pár korun */
+            transition: 0.5s;
         }
-
-        .description {
-            font-size: 0.85rem;
-            color: var(--dim-text);
-            line-height: 1.4;
-            margin-bottom: 25px;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .progress-bg {
-            background: #222;
-            height: 12px;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .progress-fill {
-            background: var(--red);
-            height: 100%;
-            width: 0%; /* Změň podle reality */
-            box-shadow: 0 0 10px var(--red);
-        }
-
+        .bar-text { position: absolute; width: 100%; top: 5px; left: 0; font-size: 0.9rem; }
         .btn {
             display: block;
-            background: var(--red);
-            color: white;
-            text-align: center;
+            background: #fff;
+            color: #000;
+            padding: 20px;
             text-decoration: none;
-            padding: 15px;
             font-weight: bold;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            transition: 0.2s;
+            font-size: 1.2rem;
+            border: 4px solid #ff0000;
         }
-
-        .btn:hover {
-            background: #ff0000;
-            transform: scale(1.02);
-        }
-
-        .urgent {
-            color: var(--red);
-            font-size: 0.7rem;
-            margin-top: 15px;
-            display: block;
-        }
+        .btn:hover { background: #ff0000; color: #fff; }
+        .timer { font-size: 0.7rem; color: #555; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="status" style="font-size: 0.7rem; color: var(--green); margin-bottom: 10px;">● SYSTEM_STRESSED_CRITICAL</div>
-    
+<div class="wrapper">
     <h1>Mission: Sanity</h1>
+    <p>Boss is a demon. I'm one click away from losing it. Help me fund this "object" before the timer hits zero.</p>
 
-    <div class="img-container">
-        <img src="TVOJE_FOTKA.JPG" alt="Top Secret">
-        <div class="lock-overlay">UNBLUR AT 100%</div>
+    <div class="img-box">
+        <img src="https://lh3.googleusercontent.com/d/1B_ZDQkHLTy8GBagr1ieG7T-xnslFMhGc" alt="Classified">
     </div>
 
-    <p class="description">
-        The corporate world is a meat grinder. I spent my last $5 on this domain. Help me get this specialized ergonomic tool before I go 100% insane. 💀
-    </p>
-
-    <div class="stats">
-        <span>Raised: $0</span>
-        <span>Goal: $50</span>
+    <div class="bar-bg">
+        <div class="bar-fill"></div>
+        <div class="bar-text">$0 / $50 FUNDED</div>
     </div>
 
-    <div class="progress-bg">
-        <div class="progress-fill" style="width: 2%;"></div>
-    </div>
+    <a href="TVŮJ_PAYPAL_LINK" class="btn">LEAK THE PHOTO ($1)</a>
 
-    <a href="TVŮJ_PAYPAL_NEBO_LINK" class="btn">Send $1 & Save a Soul</a>
-
-    <span class="urgent">WARNING: Site self-destructs if $0 remains after 24h.</span>
+    <div class="timer">SYSTEM_SHUTDOWN_IN: 23:54:12</div>
 </div>
 
 </body>
